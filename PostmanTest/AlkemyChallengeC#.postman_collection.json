@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "d69af7e0-2243-4fee-ab9b-5948c0346014",
+		"name": "AlkemyChallengeC#",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"javier3\",\r\n    \"mail\":\"javiersolis.unaj@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/auth/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"javier\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "deleteCharacter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/characters?id=6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCharacter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"img\": \"https://cdn.s7.shopdisney.eu/is/image/ShopDisneyEMEA/33631_elsa_character_mb?fit=constrain&cropN=0,0,1,1&fmt=webp&qlt=70&wid=1200&defaultImage=no-image-es_es\",\r\n    \"name\": \"ElsaChild2\",\r\n    \"age\": 5,\r\n    \"weight\": 30,\r\n    \"history\": \"La hermana de una niña que tiene el poder de convertir lo que toca en hielo.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/characters",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListadoDePersonajes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/characters",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DetalleDePersonaje",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTcxODQ0MCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.lELid9mendp4NiVDnSUtyyQ-SF_o03CXP2O6erfVys8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/characters/details?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters",
+								"details"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCharacterByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTcxOTYxNiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.LHR8JqJoh3o5URwKHRVOWeR4CaKHWUmVDB8k5y-4-uU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/characters/name?name=Alladin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Alladin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCharacterByNameAgeMovieId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/characters/search?name=Alladin&age=37&movieId=002A442C-C613-4B64-A788-185CFC37C0B2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Alladin"
+								},
+								{
+									"key": "age",
+									"value": "37"
+								},
+								{
+									"key": "movieId",
+									"value": "002A442C-C613-4B64-A788-185CFC37C0B2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCharacterByAge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/characters/age?age=19",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters",
+								"age"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCharacters",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"img\": \"https://cdn.s7.shopdisney.eu/is/image/ShopDisneyEMEA/33631_elsa_character_mb?fit=constrain&cropN=0,0,1,1&fmt=webp&qlt=70&wid=1200&defaultImage=no-image-es_es\",\r\n    \"name\": \"Elsachilderrrrrrrrs max\",\r\n    \"age\": 20000,\r\n    \"weight\": 197,\r\n    \"history\": \"La hermana de una niña que tiene el poder de convertir lo que toca en hielo.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/characters?id=6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "ListadoDePeliculas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/movies",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListadoDePeliculasDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/movies/details",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"movies",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createMovie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"Img\":\"https://i.ebayimg.com/images/g/SQMAAOSwxxdZZHT0/s-l1600.jpg\",\r\n     \"Title\":\"Jurassic Park\",\r\n     \"Date\":\"2021-12-12\",\r\n     \"Score\":5,\r\n     \"GenreId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/movies",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/movies?id=e9de1811-64f2-4451-6fe3-08da6d5b70ad",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "e9de1811-64f2-4451-6fe3-08da6d5b70ad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"Img\":\"https://i.ebayimg.com/images/g/SQMAAOSwxxdZZHT0/s-l1600.jpg\",\r\n     \"Title\":\"Jurassic Park 8\",\r\n     \"Date\":\"2021-12-12\",\r\n     \"Score\":5,\r\n     \"GenreId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/movies?id=e9de1811-64f2-4451-6fe3-08da6d5b70ad",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "e9de1811-64f2-4451-6fe3-08da6d5b70ad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMoviesByTitleGenreOrderBy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImphdmllciIsIlBhc3N3b3JkIjoiMTIzNCIsImV4cCI6MTY1OTc4NzIwMiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM4NCJ9.R-AdCVgDtVII7E-YDSf8guMwNYf5lAcohT_YBtai0yE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/movies/search",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"movies",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Alladin",
+									"disabled": true
+								},
+								{
+									"key": "genreId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
